@@ -8,4 +8,4 @@ const Color slider = Color(0xff282828);
 const Color sliderLink = Color.fromARGB(255, 64, 64, 64);
 const Color backgroundWhite = Color.fromARGB(255, 255, 255, 255);
 const Color buttonColorWHiteMode = Color(0xff767676);
-const Color buttonColorDarkMode = Color.fromARGB(125, 35, 35, 3);
+const Color buttonColorMode = Color.fromARGB(125, 35, 35, 3);
