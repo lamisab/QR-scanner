@@ -25,7 +25,8 @@ class Home extends StatelessWidget {
                 minimumSize: Size(420, 50),
               ),
               child: Text(' Get Started ',
-                  style: GoogleFonts.tajawal(fontSize: 20.0)),
+                  style: GoogleFonts.tajawal(
+                      fontSize: 20.0, fontWeight: FontWeight.bold)),
               onPressed: () {
                 Navigator.push(
                   context,

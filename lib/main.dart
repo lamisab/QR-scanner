@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:qr_scanner/view/admin/admin_screen.dart';
 import 'package:qr_scanner/view/home.dart';
 
 void main() async {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primaryColor: Colors.white, scaffoldBackgroundColor: Colors.white),
-      home: const Home(),
+      home: const AdminScreen(),
     );
   }
 }
