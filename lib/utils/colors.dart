@@ -12,4 +12,5 @@ const Color sliderLink = Color(0x3D3D3D4D);
 const Color backgroundWhite = Color.fromARGB(255, 255, 255, 255);
 const Color buttonColorWMode = Color(0xff767676);
 const Color buttonColorBMode = Color.fromARGB(125, 35, 35, 3);
+
 const Color categoryText = Color.fromARGB(255, 234, 233, 233);
