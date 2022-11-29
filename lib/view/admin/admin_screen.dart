@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:qr_scanner/view/home.dart';
+import 'package:get/get.dart';
+import '../../controller/admin_contrller.dart';
 import '../../utils/colors.dart';
+import '../widget/caregory_footer.dart';
+import '../widget/category_screen.dart';
+
+AdminController controller = Get.find(tag: "data");
 
 class AdminScreen extends StatelessWidget {
   const AdminScreen({Key? key}) : super(key: key);
@@ -8,13 +13,17 @@ class AdminScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Column(
         children: [
           //for camera
-
+          const SizedBox(
+            height: 190,
+          ),
           //for select footer
-          Home(),
+          CategorySelectHeader(),
+          Obx(() {
+            return controller.scanned.value ? Text("data1") : Text("data2");
+          })
         ],
       ),
     );
