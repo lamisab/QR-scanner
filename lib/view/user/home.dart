@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controller/user_controller.dart';
+import '../../utils/colors.dart';
 import '../widget/qr_widget.dart';
 import '../widget/text_widget.dart';
 
@@ -28,7 +29,7 @@ class Home extends StatelessWidget {
                           height: MediaQuery.of(context).size.height * 0.1537),
                       TextWidget(
                         text: 'Mrs. Arwa balawi',
-                        color: Colors.black,
+                        color: blackColor,
                         fontSize: 34,
                         fontWeight: FontWeight.w700,
                       ),
@@ -36,7 +37,7 @@ class Home extends StatelessWidget {
                           height: MediaQuery.of(context).size.height * 0.0258),
                       TextWidget(
                         text: 'UI/UX Designer',
-                        color: Colors.black,
+                        color: blackColor,
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
                       ),
@@ -44,7 +45,7 @@ class Home extends StatelessWidget {
                           height: MediaQuery.of(context).size.height * 0.0258),
                       TextWidget(
                         text: 'The Garage',
-                        color: Colors.black,
+                        color: blackColor,
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
                       ),
@@ -60,10 +61,10 @@ class Home extends StatelessWidget {
                 ],
               ),
               Container(
-                color: Colors.grey,
+                color: greyColor,
                 height: MediaQuery.of(context).size.height * 0.1537,
                 width: MediaQuery.of(context).size.width,
-                child: Center(child: TextWidget(text: 'Company logo and name', color: Colors.black, fontSize: 22, fontWeight: FontWeight.w600)),
+                child: Center(child: TextWidget(text: 'Company logo and name', color: blackColor, fontSize: 22, fontWeight: FontWeight.w600)),
               )
             ],
           ),
