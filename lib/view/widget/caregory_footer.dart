@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/admin_contrller.dart';
-import '../../utils/strings.dart';
-import '../../view/admin/scanned.dart';
 import '../../utils/colors.dart';
 import 'category_screen.dart';
 
@@ -15,7 +13,8 @@ class CategorySelectHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(5.0),
+      width: MediaQuery.of(context).size.width *0.95,
       decoration: const BoxDecoration(
         color: slider,
         borderRadius: BorderRadius.all(Radius.circular(20.0)),

@@ -11,7 +11,6 @@ class ScannedScreen extends StatelessWidget {
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: M,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

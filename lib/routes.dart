@@ -2,7 +2,7 @@
 
 import 'package:get/get.dart';
 import 'bindings.dart';
-import 'view/admin/admin_screen.dart';
+import 'view/admin/home.dart';
 import 'view/user/home.dart';
 
 appRoutes() => [
@@ -15,7 +15,7 @@ appRoutes() => [
       ),
       GetPage(
         name: '/admin',
-        page: () => AdminScreen(),
+        page: () => AdminHome(),
         transition: Transition.leftToRightWithFade,
         transitionDuration: Duration(milliseconds: 500),
         binding: Binding(),
