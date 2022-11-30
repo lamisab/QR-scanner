@@ -4,6 +4,7 @@ import '../../controller/admin_contrller.dart';
 import '../../utils/colors.dart';
 import '../widget/caregory_footer.dart';
 import '../widget/category_screen.dart';
+import 'scanned.dart';
 
 AdminController controller = Get.find(tag: "data");
 
@@ -16,14 +17,15 @@ class AdminScreen extends StatelessWidget {
       body: Column(
         children: [
           //for camera
+
           const SizedBox(
-            height: 190,
+            height: 90,
           ),
           //for select footer
           CategorySelectHeader(),
           Obx(() {
-            return controller.scanned.value ? Text("data1") : Text("data2");
-          })
+            return controller.scanned.value ? Text("data1") : ScannedScreen();
+          }),
         ],
       ),
     );

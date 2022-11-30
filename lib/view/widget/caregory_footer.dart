@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/admin_contrller.dart';
+import '../../utils/strings.dart';
 import '../../view/admin/scanned.dart';
 import '../../utils/colors.dart';
 import 'category_screen.dart';
@@ -11,7 +12,6 @@ class CategorySelectHeader extends StatelessWidget {
   const CategorySelectHeader({Key? key}) : super(key: key);
 
   static AdminController? adminController;
-
   @override
   Widget build(BuildContext context) {
     return Container(
