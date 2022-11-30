@@ -10,7 +10,6 @@ class CategorySelectHeader extends StatelessWidget {
   const CategorySelectHeader({Key? key}) : super(key: key);
 
   static AdminController? adminController;
-
   @override
   Widget build(BuildContext context) {
     return Container(

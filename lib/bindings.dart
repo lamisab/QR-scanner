@@ -6,5 +6,6 @@ class Binding implements Bindings {
   void dependencies() {
     Get.put<AdminController>(AdminController(), tag: "data", permanent: true);
     Get.put<UserController>(UserController(),tag: "data", permanent: true);
+
   }
 }
