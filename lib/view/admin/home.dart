@@ -12,15 +12,17 @@ class AdminHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    entrant.addEntrant();
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
             children: [
-    
               Obx(() {
-                  return controller.scanned.value ? ScannerWidget() : ScannedList();
-                  }),
+                return controller.scanned.value
+                    ? ScannerWidget()
+                    : ScannedList();
+              }),
               Center(child: CategorySelectHeader()),
             ],
           ),

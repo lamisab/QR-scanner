@@ -4,7 +4,7 @@ import '../model/user_model.dart';
 
 class UserController extends GetxController {
   final uniqueString = "n.altamimi@thegarage.sa".obs;
-  final userName = " norah".obs;
+  final userName = " Norah Mohammed".obs;
   final userCompany = " The Garage".obs;
   final userJob = " developer".obs;
   final isScanned = false.obs;
@@ -26,17 +26,23 @@ class UserController extends GetxController {
   }
 
   void addEntrant() {
-    entrants.add(Entrant(userName.value, uniqueString.value, userJob.value,
-        userCompany.value, DateTime.now()));
+    entrants.add(Entrant("Norah Mohammed", "n.altamimi@thegarage.sa",
+        "Developer", "The Garage", DateTime.now()));
+
+/*     entrants.add(Entrant(userName.value, uniqueString.value, userJob.value,
+        userCompany.value, DateTime.now())); */
   }
 
   bool errorChecker(String email) {
     // entrants[0].email.contains(email);
-    var contain = entrants.where((element) => element.email == email);
-    if (contain.isEmpty) {
-      return false;
-    } else {
-      return true;
+    bool check = false;
+    for (int i = 0; i < entrants.length; i++) {
+      if (entrants[i].email == email) {
+        break;
+      } else {
+        check = true;
+      }
     }
+    return check;
   }
 }
