@@ -11,9 +11,9 @@ import '../widget/text_widget.dart';
 class Home extends StatelessWidget {
   Home({super.key});
   UserController controller = Get.find(tag: "data");
-
   @override
   Widget build(BuildContext context) {
+    controller.currentUser(0);
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -28,7 +28,7 @@ class Home extends StatelessWidget {
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.1537),
                       TextWidget(
-                        text: 'Mrs. Arwa balawi',
+                        text: controller.userName.value,
                         color: blackColor,
                         fontSize: 34,
                         fontWeight: FontWeight.w700,
@@ -36,7 +36,7 @@ class Home extends StatelessWidget {
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.0258),
                       TextWidget(
-                        text: 'UI/UX Designer',
+                        text: controller.userJob.value,
                         color: blackColor,
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
@@ -44,7 +44,7 @@ class Home extends StatelessWidget {
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.0258),
                       TextWidget(
-                        text: 'The Garage',
+                        text: controller.userCompany.value,
                         color: blackColor,
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
@@ -52,7 +52,8 @@ class Home extends StatelessWidget {
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.0375),
                       QRWidget(
-                        uniqueString: controller.uniqueString.value, size: 250,
+                        uniqueString: controller.uniqueString.value,
+                        size: 250,
                       ),
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.1514),
@@ -62,9 +63,14 @@ class Home extends StatelessWidget {
               ),
               Container(
                 color: greyColor,
-                height: MediaQuery.of(context).size.height * 0.1537,
+                height: MediaQuery.of(context).size.height * 0.1937,
                 width: MediaQuery.of(context).size.width,
-                child: Center(child: TextWidget(text: 'Company logo and name', color: blackColor, fontSize: 22, fontWeight: FontWeight.w600)),
+                child: Center(
+                    child: TextWidget(
+                        text: 'Company logo and name',
+                        color: blackColor,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600)),
               )
             ],
           ),
