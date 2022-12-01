@@ -34,7 +34,7 @@ class _CameraWidgetState extends State<CameraWidget> {
   @override
   Widget build(BuildContext context) {
     if (result != null) {
-      entrant.addEntrant();
+      entrant.addEntrant(result!.code.toString());
       entrant.isScanned.value = true;
     }
     return SizedBox(
@@ -43,19 +43,41 @@ class _CameraWidgetState extends State<CameraWidget> {
       child: Column(
         children: [
           Center(
-              child: (result != null)
-                  ? Center(
+            child: (result != null)
+                ? Center(
+                    child: LayoutBuilder(
+                      builder: (BuildContext, BoxConstraints) {
+                        if (entrant.isScanned.value == true &&
+                            entrant.errorChecker(result!.code.toString())) {
+                          entrant.addEntrant(result!.code.toString());
+                          return const Text('Success');
+                        } else {
+                          return const Text('Error');
+                        }
+                      },
+                    ),
+                  )
+                : TextWidget(
+                    text: 'Scan QR Code',
+                    color: blackColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+
+/* 
+if (result != null){Center(
                       child: (entrant.isScanned.value == true &&
                               entrant.errorChecker(result!.code.toString()) ==
                                   true)
                           ? const Text('Success')
-                          : const Text('Error'))
-                  : TextWidget(
+                          : const Text('Error'))}else{TextWidget(
                       text: 'Scan QR Code',
                       color: blackColor,
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
-                    )),
+                    )} 
+ */
+          ),
           Container(
             height: MediaQuery.of(context).size.height * 0.0640,
           ),

@@ -16,10 +16,7 @@ class UserController extends GetxController {
     User('Arwa Mohammed', 'a.altamimi@thegarage.sa', 'UI/UX Designer',
         'The Garage')
   ].obs;
-  final entrants = [
-    Entrant("Norah Mohammed", "n.altamimi@thegarage.sa", "Developer",
-        "The Garage", DateTime.now())
-  ].obs;
+  final entrants = [].obs;
 
   void currentUser(int index) {
     userName.value = users[index].name!;
@@ -28,7 +25,7 @@ class UserController extends GetxController {
     userCompany.value = users[index].company!;
   }
 
-  void addEntrant() {
+  void addEntrant(String email) {
     entrants.add(Entrant(userName.value, uniqueString.value, userJob.value,
         userCompany.value, DateTime.now()));
   }
