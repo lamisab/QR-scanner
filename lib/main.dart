@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'QR',
       debugShowCheckedModeBanner: false,
-      initialRoute: '/admin',
+      initialRoute: '/',
       defaultTransition: Transition.zoom,
       getPages: appRoutes(),
     );

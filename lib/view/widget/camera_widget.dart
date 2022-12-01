@@ -2,8 +2,9 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-
+import '../../controller/user_controller.dart';
 import '../../utils/colors.dart';
 import 'text_widget.dart';
 
@@ -18,9 +19,8 @@ class _CameraWidgetState extends State<CameraWidget> {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   Barcode? result;
   QRViewController? controller;
+  UserController entrant = Get.find(tag: "data");
 
-  // In order to get hot reload to work we need to pause the camera if the platform
-  // is android, or resume the camera if the platform is iOS.
   @override
   void reassemble() {
     super.reassemble();
@@ -33,6 +33,10 @@ class _CameraWidgetState extends State<CameraWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (result != null) {
+      entrant.addEntrant();
+      entrant.isScanned.value = true;
+    }
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.6199,
       width: MediaQuery.of(context).size.width * 0.95,
@@ -40,8 +44,12 @@ class _CameraWidgetState extends State<CameraWidget> {
         children: [
           Center(
               child: (result != null)
-                  ? Text(
-                      'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}result: ${result!.rawBytes} result: ${result!} result: ${result!.toString()}')
+
+                  ? Center(
+                      child: (entrant.isScanned.value == true &&
+                              entrant.errorChecker(entrant.uniqueString.value))
+                          ? const Text('Success')
+                          : const Text('Error'))
                   : TextWidget(
                       text: 'Scan QR Code',
                       color: blackColor,
