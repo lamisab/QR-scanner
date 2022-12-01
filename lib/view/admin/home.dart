@@ -7,12 +7,10 @@ import '../widget/scanned_list.dart';
 import '../widget/scanner_widget.dart';
 
 class AdminHome extends StatelessWidget {
-  AdminHome({super.key});
-  UserController entrant = Get.find(tag: "data");
+  const AdminHome({super.key});
 
   @override
   Widget build(BuildContext context) {
-    entrant.addEntrant();
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(

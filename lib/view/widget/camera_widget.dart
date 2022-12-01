@@ -46,8 +46,7 @@ class _CameraWidgetState extends State<CameraWidget> {
               child: (result != null)
                   ? Center(
                       child: (entrant.isScanned.value == true &&
-                              entrant.errorChecker(
-                                      entrant.uniqueString.value) ==
+                              entrant.errorChecker(result!.code.toString()) ==
                                   true)
                           ? const Text('Success')
                           : const Text('Error'))

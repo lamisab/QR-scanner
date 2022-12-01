@@ -16,7 +16,10 @@ class UserController extends GetxController {
     User('Arwa Mohammed', 'a.altamimi@thegarage.sa', 'UI/UX Designer',
         'The Garage')
   ].obs;
-  final entrants = [].obs;
+  final entrants = [
+    Entrant("Norah Mohammed", "n.altamimi@thegarage.sa", "Developer",
+        "The Garage", DateTime.now())
+  ].obs;
 
   void currentUser(int index) {
     userName.value = users[index].name!;
@@ -26,23 +29,16 @@ class UserController extends GetxController {
   }
 
   void addEntrant() {
-    entrants.add(Entrant("Norah Mohammed", "n.altamimi@thegarage.sa",
-        "Developer", "The Garage", DateTime.now()));
-
-/*     entrants.add(Entrant(userName.value, uniqueString.value, userJob.value,
-        userCompany.value, DateTime.now())); */
+    entrants.add(Entrant(userName.value, uniqueString.value, userJob.value,
+        userCompany.value, DateTime.now()));
   }
 
   bool errorChecker(String email) {
-    // entrants[0].email.contains(email);
-    bool check = false;
-    for (int i = 0; i < entrants.length; i++) {
-      if (entrants[i].email == email) {
-        break;
-      } else {
-        check = true;
-      }
+    var contain = entrants.where((element) => element.email == email);
+    if (contain.isEmpty) {
+      return true;
+    } else {
+      return false;
     }
-    return check;
   }
 }
