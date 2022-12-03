@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
   UserController controller = Get.find(tag: "data");
   @override
   Widget build(BuildContext context) {
-    controller.currentUser(0);
+    controller.currentUser(2);
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(

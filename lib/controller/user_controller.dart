@@ -26,13 +26,14 @@ class UserController extends GetxController {
   }
 
   void addEntrant(String email) {
-    entrants.add(Entrant(userName.value, uniqueString.value, userJob.value,
+    entrants.add(Entrant(userName.value, email, userJob.value,
         userCompany.value, DateTime.now()));
   }
 
   bool errorChecker(String email) {
     var contain = entrants.where((element) => element.email == email);
     if (contain.isEmpty) {
+      addEntrant(email);
       return true;
     } else {
       return false;

@@ -43,11 +43,6 @@ class _CameraWidgetState extends State<CameraWidget> {
                     child: LayoutBuilder(
                       builder: (BuildContext, BoxConstraints) {
                         if (entrant.errorChecker(result!.code.toString())) {
-                          print("entrant.entrants.length");
-                          print(entrant.entrants.length);
-                          entrant.addEntrant(result!.code.toString());
-                          print("after .length");
-                          print(entrant.entrants.length);
                           return const Text('Success');
                         } else {
                           return const Text('Error');
