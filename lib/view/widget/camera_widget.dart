@@ -17,16 +17,16 @@ class CameraWidget extends StatefulWidget {
 class _CameraWidgetState extends State<CameraWidget> {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   Barcode? result;
-  QRViewController? controller;
-  UserController entrant = Get.find(tag: "data");
+  QRViewController? qrViewController;
+  UserController controller = Get.find(tag: "data");
 
   @override
   void reassemble() {
     super.reassemble();
     if (Platform.isAndroid) {
-      controller!.pauseCamera();
+      qrViewController!.pauseCamera();
     } else if (Platform.isIOS) {
-      controller!.resumeCamera();
+      qrViewController!.resumeCamera();
     }
   }
 
@@ -42,7 +42,7 @@ class _CameraWidgetState extends State<CameraWidget> {
                 ? Center(
                     child: LayoutBuilder(
                       builder: (BuildContext, BoxConstraints) {
-                        if (entrant.errorChecker(result!.code.toString())) {
+                        if (controller.errorChecker(result!.code.toString())) {
                           return const Text('Success');
                         } else {
                           return const Text('Error');
@@ -94,13 +94,11 @@ if (result != null){Center(
     );
   }
 
-  void _onQRViewCreated(QRViewController controller) {
-    this.controller = controller;
-    controller.scannedDataStream.listen((scanData) {
+  void _onQRViewCreated(QRViewController qrViewController) {
+    this.qrViewController = qrViewController;
+    qrViewController.scannedDataStream.listen((scanData) {
       setState(() {
         result = scanData;
-        print("_onQRViewCreated");
-        print(result);
       });
     });
   }
@@ -116,7 +114,7 @@ if (result != null){Center(
 
   @override
   void dispose() {
-    controller?.dispose();
+    qrViewController?.dispose();
     super.dispose();
   }
 }

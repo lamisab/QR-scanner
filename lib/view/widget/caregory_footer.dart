@@ -4,7 +4,7 @@ import '../../controller/admin_contrller.dart';
 import '../../utils/colors.dart';
 import 'category_screen.dart';
 
-AdminController controller = Get.find(tag: "data");
+AdminController controller = Get.find();
 
 class CategorySelectHeader extends StatelessWidget {
   const CategorySelectHeader({Key? key}) : super(key: key);

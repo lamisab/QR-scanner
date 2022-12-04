@@ -16,11 +16,12 @@ class Home extends StatelessWidget {
     controller.currentUser(2);
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.95 ,
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(
@@ -30,7 +31,7 @@ class Home extends StatelessWidget {
                       TextWidget(
                         text: controller.userName.value,
                         color: blackColor,
-                        fontSize: 34,
+                        fontSize: 20,
                         fontWeight: FontWeight.w700,
                       ),
                       SizedBox(
@@ -38,7 +39,7 @@ class Home extends StatelessWidget {
                       TextWidget(
                         text: controller.userJob.value,
                         color: blackColor,
-                        fontSize: 20,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
                       SizedBox(
@@ -46,14 +47,14 @@ class Home extends StatelessWidget {
                       TextWidget(
                         text: controller.userCompany.value,
                         color: blackColor,
-                        fontSize: 20,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.0375),
                       QRWidget(
                         uniqueString: controller.uniqueString.value,
-                        size: 250,
+                        size: 200,
                       ),
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.1514),
@@ -61,19 +62,19 @@ class Home extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(
-                color: greyColor,
-                height: MediaQuery.of(context).size.height * 0.1937,
-                width: MediaQuery.of(context).size.width,
-                child: Center(
-                    child: TextWidget(
-                        text: 'Company logo and name',
-                        color: blackColor,
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600)),
-              )
-            ],
-          ),
+            ),
+            Container(
+              color: greyColor,
+              height: MediaQuery.of(context).size.height * 0.1537,
+              width: MediaQuery.of(context).size.width,
+              child: Center(
+                  child: TextWidget(
+                      text: 'Company logo and name',
+                      color: blackColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600)),
+            )
+          ],
         ),
       ),
     );

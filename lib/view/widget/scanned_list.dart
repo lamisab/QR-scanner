@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../controller/user_controller.dart';
 import '../../utils/colors.dart';
 import 'text_widget.dart';
-UserController entrant = Get.find(tag: "data");
 
 class ScannedList extends StatelessWidget {
-  const ScannedList({super.key});
+  ScannedList({super.key});
+  UserController controller = Get.find(tag: "data");
 
   @override
   Widget build(BuildContext context) {
@@ -28,22 +27,24 @@ class ScannedList extends StatelessWidget {
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.5935,
           child: ListView.builder(
-            itemCount: entrant.entrants.length,
+            itemCount: controller.entrants.length,
             itemBuilder: (BuildContext context, int index) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          TextWidget(
-                            text: entrant.entrants[index].name,
+                          Obx((){
+                            return TextWidget(
+                            text: '${controller.entrants[index].name}',
                             color: blackColor,
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
-                          ),
+                          );
+                          }),
                           TextWidget(
                             text: '${DateTime.now()}',
                             color: greyColor,

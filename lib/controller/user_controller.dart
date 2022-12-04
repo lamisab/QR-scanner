@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import '../model/user_model.dart';
 
 class UserController extends GetxController {
-  final uniqueString = "n.altamimi@thegarage.sa".obs;
-  final userName = " Norah Mohammed".obs;
-  final userCompany = " The Garage".obs;
-  final userJob = " developer".obs;
+  final uniqueString = "".obs;
+  final userName = "".obs;
+  final userCompany = "".obs;
+  final userJob = "".obs;
   final isScanned = false.obs;
   final users = [
     User(
@@ -33,10 +33,17 @@ class UserController extends GetxController {
   bool errorChecker(String email) {
     var contain = entrants.where((element) => element.email == email);
     if (contain.isEmpty) {
+      findUser(email);
       addEntrant(email);
       return true;
     } else {
       return false;
+    }
+  }
+
+  void findUser(String email) {
+    for (int i = 0; i < users.length; i++) {
+      if (users[i].email==email)userName.value = users[i].name!;
     }
   }
 }
