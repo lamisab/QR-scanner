@@ -43,7 +43,14 @@ class UserController extends GetxController {
 
   void findUser(String email) {
     for (int i = 0; i < users.length; i++) {
-      if (users[i].email==email)userName.value = users[i].name!;
+      if (users[i].email == email) {
+        userName.value = users[i].name!;
+        uniqueString.value = email;
+        userJob.value = users[i].job!;
+        userCompany.value = users[i].company!;
+        
+
+      }
     }
   }
 }

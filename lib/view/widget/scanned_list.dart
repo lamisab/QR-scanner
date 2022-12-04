@@ -46,7 +46,7 @@ class ScannedList extends StatelessWidget {
                           );
                           }),
                           TextWidget(
-                            text: '${DateTime.now()}',
+                            text: '${controller.entrants[index].time}',
                             color: greyColor,
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
