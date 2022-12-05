@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'routes.dart';
+import 'routes/routes.dart';
 
 void main() async {
   runApp(MyApp());

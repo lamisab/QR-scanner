@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 import '../../controller/user_controller.dart';
 import '../../utils/colors.dart';
-import '../widget/qr_widget.dart';
+import '../widget/scanQR/qr_widget.dart';
 import '../widget/text_widget.dart';
 
 class Home extends StatelessWidget {
@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.95 ,
+              width: MediaQuery.of(context).size.width * 0.95,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

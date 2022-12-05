@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:get/get.dart';
-import 'bindings.dart';
-import 'view/admin/home.dart';
-import 'view/user/home.dart';
+import '../bindings/bindings.dart';
+import '../view/admin/home.dart';
+import '../view/user/home.dart';
 
 appRoutes() => [
       GetPage(

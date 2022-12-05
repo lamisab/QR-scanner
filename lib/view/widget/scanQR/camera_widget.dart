@@ -3,9 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import '../../controller/user_controller.dart';
-import '../../utils/colors.dart';
-import 'text_widget.dart';
+import 'package:qr_scanner/view/widget/scanQR/error.dart';
+import 'package:qr_scanner/view/widget/scanQR/sucsses.dart';
+import '../../../controller/user_controller.dart';
+import '../../../utils/colors.dart';
+import '../text_widget.dart';
 
 class CameraWidget extends StatefulWidget {
   const CameraWidget({super.key});
@@ -33,7 +35,7 @@ class _CameraWidgetState extends State<CameraWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.6199,
+      height: MediaQuery.of(context).size.height * 0.74,
       width: MediaQuery.of(context).size.width * 0.95,
       child: Column(
         children: [
@@ -43,9 +45,9 @@ class _CameraWidgetState extends State<CameraWidget> {
                     child: LayoutBuilder(
                       builder: (BuildContext, BoxConstraints) {
                         if (controller.errorChecker(result!.code.toString())) {
-                          return const Text('Success');
+                          return Sucsses();
                         } else {
-                          return const Text('Error');
+                          return error();
                         }
                       },
                     ),
@@ -56,20 +58,6 @@ class _CameraWidgetState extends State<CameraWidget> {
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
                   ),
-
-/* 
-if (result != null){Center(
-                      child: (entrant.isScanned.value == true &&
-                              entrant.errorChecker(result!.code.toString()) ==
-                                  true)
-                          ? const Text('Success')
-                          : const Text('Error'))}else{TextWidget(
-                      text: 'Scan QR Code',
-                      color: blackColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                    )} 
- */
           ),
           Container(
             height: MediaQuery.of(context).size.height * 0.0640,

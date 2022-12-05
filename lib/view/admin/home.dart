@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/user_controller.dart';
-import '../widget/caregory_footer.dart';
-import '../widget/scanned_list.dart';
-import '../widget/scanner_widget.dart';
+import '../widget/scanQR/caregory_footer.dart';
+import '../widget/scanned/scanned_list.dart';
+import '../widget/scanQR/scanner_widget.dart';
 
 class AdminHome extends StatelessWidget {
   const AdminHome({super.key});
