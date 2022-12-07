@@ -7,7 +7,7 @@ import 'package:qr_scanner/view/widget/scanQR/error.dart';
 import 'package:qr_scanner/view/widget/scanQR/sucsses.dart';
 import '../../../controller/user_controller.dart';
 import '../../../utils/colors.dart';
-import '../text_widget.dart';
+import '../../../model/admin/text_widget.dart';
 
 class CameraWidget extends StatefulWidget {
   const CameraWidget({super.key});
@@ -44,9 +44,13 @@ class _CameraWidgetState extends State<CameraWidget> {
                 ? Center(
                     child: LayoutBuilder(
                       builder: (BuildContext, BoxConstraints) {
+                        print("HOW MUCH WILL SCAN !!!");
+
                         if (controller.errorChecker(result!.code.toString())) {
+                          qrViewController?.dispose();
                           return Sucsses();
                         } else {
+                          qrViewController?.dispose();
                           return error();
                         }
                       },

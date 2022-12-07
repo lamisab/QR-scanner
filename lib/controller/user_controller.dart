@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
+import 'package:qr_scanner/view/widget/scanQR/sucsses.dart';
 
-import '../model/user_model.dart';
+import '../model/user/user_model.dart';
 
 class UserController extends GetxController {
   final uniqueString = "".obs;
@@ -35,6 +36,7 @@ class UserController extends GetxController {
     if (contain.isEmpty) {
       findUser(email);
       addEntrant(email);
+      print("Sucsses");
       return true;
     } else {
       return false;
@@ -48,9 +50,12 @@ class UserController extends GetxController {
         uniqueString.value = email;
         userJob.value = users[i].job!;
         userCompany.value = users[i].company!;
-        
-
       }
     }
   }
+}
+
+final isSucsses = false.obs;
+bool isSucssesFun() {
+  return true;
 }

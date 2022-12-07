@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qr_scanner/controller/user_controller.dart';
-import 'package:qr_scanner/view/widget/text_widget.dart';
+import 'package:qr_scanner/model/admin/text_widget.dart';
 import '../../../utils/colors.dart';
 
 // ignore: must_be_immutable
@@ -22,9 +22,9 @@ class error extends StatelessWidget {
           children: [
             Row(
               children: const [
-                Icon(Icons.check_circle_outline),
+                Icon(Icons.cancel_outlined),
                 SizedBox(
-                  width: 6,
+                  width: 8,
                 ),
                 Text(
                   'Error',
@@ -37,10 +37,8 @@ class error extends StatelessWidget {
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     const Text('The invitation was cleared'),
                     const SizedBox(
@@ -63,7 +61,7 @@ class error extends StatelessWidget {
                 ),
                 IconButton(
                   onPressed: () {
-                    Get.close(0);
+                    Get.back();
                   },
                   icon: const Icon(
                     Icons.close,

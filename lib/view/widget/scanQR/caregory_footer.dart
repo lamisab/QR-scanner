@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controller/admin_contrller.dart';
 import '../../../utils/colors.dart';
-import '../category_screen.dart';
+import '../../../model/admin/category_screen.dart';
 
 AdminController controller = Get.find();
 

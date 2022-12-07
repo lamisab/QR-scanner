@@ -10,7 +10,8 @@ class TextWidget extends StatelessWidget {
   FontWeight fontWeight;
   TextDecoration? decoration;
   TextWidget(
-      {this.decoration,required this.text,
+      {this.decoration,
+      required this.text,
       required this.color,
       required this.fontSize,
       required this.fontWeight,

@@ -6,14 +6,14 @@ import 'package:get/get.dart';
 import '../../controller/user_controller.dart';
 import '../../utils/colors.dart';
 import '../widget/scanQR/qr_widget.dart';
-import '../widget/text_widget.dart';
+import '../../model/admin/text_widget.dart';
 
 class Home extends StatelessWidget {
   Home({super.key});
   UserController controller = Get.find(tag: "data");
   @override
   Widget build(BuildContext context) {
-    controller.currentUser(2);
+    controller.currentUser(0);
     return SafeArea(
       child: Scaffold(
         body: Column(

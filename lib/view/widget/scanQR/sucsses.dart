@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qr_scanner/controller/user_controller.dart';
-import 'package:qr_scanner/view/widget/text_widget.dart';
+import 'package:qr_scanner/model/admin/text_widget.dart';
 import '../../../utils/colors.dart';
 
 class Sucsses extends StatelessWidget {
@@ -34,7 +34,6 @@ class Sucsses extends StatelessWidget {
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -60,7 +59,7 @@ class Sucsses extends StatelessWidget {
                 ),
                 IconButton(
                   onPressed: () {
-                    Get.close(0);
+                    Get.back();
                   },
                   icon: const Icon(
                     Icons.close,

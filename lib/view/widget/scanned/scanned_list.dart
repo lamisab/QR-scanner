@@ -6,7 +6,7 @@ import 'package:top_snackbar_flutter/tap_bounce_container.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../utils/colors.dart';
-import '../text_widget.dart';
+import '../../../model/admin/text_widget.dart';
 
 class ScannedList extends StatelessWidget {
   ScannedList({super.key});
