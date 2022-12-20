@@ -10,12 +10,11 @@ class UserController extends GetxController {
   final userJob = "".obs;
   final isScanned = false.obs;
   final users = [
-    User(
-        'Norah Mohammed', 'n.altamimi@thegarage.sa', 'Developer', 'The Garage'),
-    User(
-        'Lmise Mohammed', 'l.altamimi@thegarage.sa', 'Developer', 'The Garage'),
-    User('Arwa Mohammed', 'a.altamimi@thegarage.sa', 'UI/UX Designer',
-        'The Garage')
+    User('Norah Mohammed', 'altamiminourahcs@gmail.com', 'Developer',
+        'The Garage'),
+    User('Lmise Mohammed', 'lamisabdullah@outlook.com', 'Developer',
+        'The Garage'),
+    User('Arwa Mohammed', 'noramsrt@gmail.com', 'UI/UX Designer', 'The Garage')
   ].obs;
   final entrants = [].obs;
 

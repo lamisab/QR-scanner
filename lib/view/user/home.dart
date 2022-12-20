@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:http/http.dart' as http;
 import '../../controller/user_controller.dart';
 import '../../utils/colors.dart';
 import '../widget/scanQR/qr_widget.dart';
@@ -11,9 +13,31 @@ import '../../model/admin/text_widget.dart';
 class Home extends StatelessWidget {
   Home({super.key});
   UserController controller = Get.find(tag: "data");
+  final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
+  Future sendEmail() async {
+    final request = await http.post(url,
+        headers: {
+          'origin': 'http://localhost',
+          'Content-Type': 'application/json'
+        },
+        body: json.encode({
+          'service_id': 'service_xzvc7yw',
+          'template_id': 'template_8bkp8ig',
+          'user_id': 'LdDLNcQ3JEglZmH07',
+          'template_params': {
+            'from_Event': 'The Garage',
+            'to_name': controller.userName.value,
+            'email': controller.uniqueString.value,
+            'message': 'Details'
+          }
+        }));
+    print(request.statusCode);
+  }
+
   @override
   Widget build(BuildContext context) {
     controller.currentUser(0);
+    sendEmail();
     return SafeArea(
       child: Scaffold(
         body: Column(
